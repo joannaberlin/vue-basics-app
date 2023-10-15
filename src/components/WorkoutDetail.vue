@@ -1,7 +1,9 @@
 <template>
 	<li>
 		<h2>{{ workout.type }}</h2>
-		<button @click="toggleDetails">Show Details</button>
+		<button @click="toggleDetails">
+			{{ detailsAreVisible ? 'Hide' : 'Show' }} Details
+		</button>
 		<ul v-if="detailsAreVisible">
 			<li><strong>Body parts: </strong>{{ workout.id }}</li>
 			<li><strong>Duration: </strong>{{ workout.duration }}</li>
