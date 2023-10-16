@@ -1,28 +1,41 @@
 <template>
 	<li>
-		<h2>{{ workout.type }}</h2>
+		<h2>{{ trainingType }}</h2>
 		<button @click="toggleDetails">
 			{{ detailsAreVisible ? 'Hide' : 'Show' }} Details
 		</button>
 		<ul v-if="detailsAreVisible">
-			<li><strong>Body parts: </strong>{{ workout.id }}</li>
-			<li><strong>Duration: </strong>{{ workout.duration }}</li>
-			<li><strong>Equipment used: </strong>{{ workout.equipment }}</li>
+			<li><strong>Body parts: </strong>{{ id }}</li>
+			<li><strong>Duration: </strong>{{ duration }}</li>
+			<li><strong>Equipment used: </strong>{{ equipment }}</li>
 		</ul>
 	</li>
 </template>
 
 <script>
 export default {
+	// props: ['id', 'duration', 'trainingType', 'equipment'],
+	props: {
+		id: {
+			type: String,
+			required: true,
+		},
+		duration: {
+			type: String,
+			required: true,
+		},
+		trainingType: {
+			type: String,
+			required: true,
+		},
+		equipment: {
+			type: String,
+			required: true,
+		},
+	},
 	data() {
 		return {
 			detailsAreVisible: false,
-			workout: {
-				id: 'full-body',
-				duration: '45 min',
-				type: 'strength training',
-				equipment: 'kettlebells',
-			},
 		};
 	},
 	methods: {

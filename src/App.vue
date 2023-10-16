@@ -2,8 +2,18 @@
 	<section>
 		<header><h1>My Workouts</h1></header>
 		<ul>
-			<workout-detail></workout-detail>
-			<workout-detail></workout-detail>
+			<workout-detail
+				training-type="strength training"
+				id="full-body"
+				duration="45 min"
+				equipment="kettlebells"
+			></workout-detail>
+			<workout-detail
+				training-type="strength training"
+				id="glutes and legs"
+				duration="45 min"
+				equipment="rubber resistance bands"
+			></workout-detail>
 		</ul>
 	</section>
 </template>
