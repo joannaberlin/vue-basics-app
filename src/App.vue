@@ -3,16 +3,13 @@
 		<header><h1>My Workouts</h1></header>
 		<ul>
 			<workout-detail
-				training-type="strength training"
-				id="full-body"
-				duration="45 min"
-				equipment="kettlebells"
-			></workout-detail>
-			<workout-detail
-				training-type="strength training"
-				id="glutes and legs"
-				duration="45 min"
-				equipment="rubber resistance bands"
+				v-for="workout in workouts"
+				:key="workout.id"
+				:training-type="workout.type"
+				:id="workout.id"
+				:duration="workout.duration"
+				:equipment="workout.equipment"
+				:is-favorite="true"
 			></workout-detail>
 		</ul>
 	</section>

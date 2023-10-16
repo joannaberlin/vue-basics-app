@@ -1,6 +1,7 @@
 <template>
 	<li>
-		<h2>{{ trainingType }}</h2>
+		<h2>{{ trainingType }} {{ workoutIsFavorite ? '(Favorite)' : '' }}</h2>
+		<button @click="toggleFavorite">Toggle Favorite</button>
 		<button @click="toggleDetails">
 			{{ detailsAreVisible ? 'Hide' : 'Show' }} Details
 		</button>
@@ -32,15 +33,24 @@ export default {
 			type: String,
 			required: true,
 		},
+		isFavorite: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
 	},
 	data() {
 		return {
 			detailsAreVisible: false,
+			workoutIsFavorite: this.isFavorite,
 		};
 	},
 	methods: {
 		toggleDetails() {
 			this.detailsAreVisible = !this.detailsAreVisible;
+		},
+		toggleFavorite() {
+			this.workoutIsFavorite = !this.workoutIsFavorite;
 		},
 	},
 };
